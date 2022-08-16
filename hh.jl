@@ -82,9 +82,16 @@ function main()
     end
 
     plot(tl, vl, fmt=:png, title=:"hh model", xlabel=:"time[m/s]", ylabel="membrane potential[mV]", label=:"v", ylims=(-80, 60))
-    png("figure/hh.png")
+    png("figure/hh/hh.png")
     plot(tl, vl, fmt=:png, title=:"hh model(~100ms)", xlabel=:"time[m/s]", ylabel="membrane potential[mV]", label=:"v", ylims=(-80, 60), xlims=(0, 100))
-    png("figure/hh_100ms.png")
+    png("figure/hh/hh_100ms.png")
+    vp = plot(tl, vl, fmt=:png, title=:"hh model(v)", xlabel=:"time[m/s]", ylabel="v", label=:"", xlims=(-5, 25), ylims=(-80, 65))
+    mp = plot(tl, ml, fmt=:png, title=:"hh model(m)", xlabel=:"time[m/s]", ylabel="m", label=:"", xlims=(-5, 25), ylims=(0, 1))
+    hp = plot(tl, hl, fmt=:png, title=:"hh model(h)", xlabel=:"time[m/s]", ylabel="h", label=:"", xlims=(-5, 25), ylims=(0, 1))
+    np = plot(tl, nl, fmt=:png, title=:"hh model(n)", xlabel=:"time[m/s]", ylabel="n", label=:"", xlims=(-5, 25), ylims=(0, 1))
+    plot(vp, mp, hp, np)
+    png("figure/hh/vmhn.png")
+
 end
 
 main()
