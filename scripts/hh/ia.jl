@@ -110,7 +110,7 @@ function main()
 
     end
 
-    plot(tl, vl, fmt=:png, title=:"hh model(ia)", xlabel=:"time[m/s]", ylabel="membrane potential[mV]", label=:"v", ylims=(-80, 60), xlims=(0, 1000))
+    plot(tl, vl, fmt=:png, title="hh model(ia)", xlabel="time[m/s]", ylabel="membrane potential[mV]", label="v", ylims=(-80, 60), xlims=(0, 1000))
     png("figures/hh/ia_8.61mA.png")
 
 

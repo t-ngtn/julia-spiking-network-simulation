@@ -97,9 +97,9 @@ function main()
 
     end
 
-    plot(tl, vl, fmt=:png, title=:"hh model(sfa 0~100ms)", xlabel=:"time[m/s]", ylabel="membrane potential[mV]", label=:"v", ylims=(-80, 60), xlims=(0, 100))
+    plot(tl, vl, fmt=:png, title="hh model(sfa 0~100ms)", xlabel="time[m/s]", ylabel="membrane potential[mV]", label="v", ylims=(-80, 60), xlims=(0, 100))
     png("figures/hh/sfa_0~100ms.png")
-    plot(tl, vl, fmt=:png, title=:"hh model(sfa 900~1000ms)", xlabel=:"time[m/s]", ylabel="membrane potential[mV]", label=:"v", ylims=(-80, 60), xlims=(900, 1000))
+    plot(tl, vl, fmt=:png, title="hh model(sfa 900~1000ms)", xlabel="time[m/s]", ylabel="membrane potential[mV]", label="v", ylims=(-80, 60), xlims=(900, 1000))
     png("figures/hh/sfa_900~1000ms.png")
 
 

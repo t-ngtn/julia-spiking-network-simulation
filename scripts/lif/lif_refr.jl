@@ -9,9 +9,12 @@ const DT = 1.0
 const T = 1000.0
 const NT = 1000
 const I_EXT = 12.0
+const T_REFR = 5.0
+const NT_REFR = 5
 
 function main()
     v = V_REST
+    refr = 0
 
     tl = []
     vl = []
@@ -32,12 +35,13 @@ function main()
             push!(vl, 0.0)
         end
 
-        v = s * V_RESET + (!s) * v
+        refr = s * (NT_REFR) + (!s) * (refr - 1)
+        v = (refr > 0) ? V_RESET : v
 
     end
 
-    plot(tl, vl, fmt=:png, title="lif model", xlabel="time[m/s]", ylabel="membrane potential[mV]", label="v", ylims=(-70, 0))
-    png("figures/lif/lif.png")
+    plot(tl, vl, fmt=:png, title="lif model(refr)", xlabel="time[m/s]", ylabel="membrane potential[mV]", label="v", ylims=(-70, 0))
+    png("figures/lif/lif_refr.png")
 
 end
 
