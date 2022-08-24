@@ -93,13 +93,13 @@ function main()
         dvdt3 = dvdt(v + 0.5 * DT * dvdt2, m + 0.5 * DT * dmdt2, h + 0.5 * DT * dhdt2, n + 0.5 * DT * dndt2,
             a + 0.5 * DT * dadt2, b + 0.5 * DT * dbdt2, i_ext)
 
-        dmdt4 = dmdt(v + 0.5 * DT * dvdt3, m + 0.5 * DT * dmdt3)
-        dhdt4 = dhdt(v + 0.5 * DT * dvdt3, h + 0.5 * DT * dhdt3)
-        dndt4 = dndt(v + 0.5 * DT * dvdt3, n + 0.5 * DT * dndt3)
-        dadt4 = dadt(v + 0.5 * DT * dvdt3, a + 0.5 * DT * dadt3)
-        dbdt4 = dbdt(v + 0.5 * DT * dvdt3, b + 0.5 * DT * dbdt3)
-        dvdt4 = dvdt(v + 0.5 * DT * dvdt3, m + 0.5 * DT * dmdt3, h + 0.5 * DT * dhdt3, n + 0.5 * DT * dndt3,
-            a + 0.5 * DT * dadt3, b + 0.5 * DT * dbdt3, i_ext)
+        dmdt4 = dmdt(v + DT * dvdt3, m + DT * dmdt3)
+        dhdt4 = dhdt(v + DT * dvdt3, h + DT * dhdt3)
+        dndt4 = dndt(v + DT * dvdt3, n + DT * dndt3)
+        dadt4 = dadt(v + DT * dvdt3, a + DT * dadt3)
+        dbdt4 = dbdt(v + DT * dvdt3, b + DT * dbdt3)
+        dvdt4 = dvdt(v + DT * dvdt3, m + DT * dmdt3, h + DT * dhdt3, n + DT * dndt3,
+            a + DT * dadt3, b + DT * dbdt3, i_ext)
 
         m += DT * (dmdt1 + 2 * dmdt2 + 2 * dmdt3 + dmdt4) / 6.0
         h += DT * (dhdt1 + 2 * dhdt2 + 2 * dhdt3 + dhdt4) / 6.0
