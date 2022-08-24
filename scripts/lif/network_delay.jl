@@ -19,7 +19,7 @@ const DELAY_SYN = 2.0
 const NDELAY_SYN = 2
 
 function main()
-    v = [V_REST, V_REST - 15.0]  # 同期がわかりやすくしている 逆相同期の場合は0.1とかにする
+    v = [V_REST, V_REST - 15.0]  # 同期がわかりやすくしている 逆相同期の場合は0.1とか2とかにする
     i_syn = [0.0, 0.0]
     s = [false, false]
     ts = [0, 0]
