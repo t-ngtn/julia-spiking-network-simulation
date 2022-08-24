@@ -31,8 +31,7 @@ function main()
         end
 
         for i in 1:N
-            s_op = i == 1 ? 2 : 1
-            i_syn[i] = exp.(-DT / TAU_SYN) * i_syn[i] + W * s[s_op]
+            i_syn[i] = exp.(-DT / TAU_SYN) * i_syn[i] + W * s[i == 1 ? 2 : 1]
         end
         for i in 1:N
             v[i] += DT * (-(v[i] - V_REST) + R_SYN * i_syn[i] + R_M * I_EXT) / TAU
